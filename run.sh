@@ -23,6 +23,7 @@ datasette() {
 updateDB() {
   local db="$1"
   pgntosqlite -u jamesmstone -o "$db" fetch lichess
+  pgntosqlite -u jamesmstone -o "$db" fetch chess
 }
 
 commitDB() {
