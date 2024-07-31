@@ -1,5 +1,3 @@
 FROM python:alpine
-RUN apk add nodejs npm curl && npm i -g vercel
-RUN pip install datasette
-RUN datasette install -U datasette-publish-vercel datasette-vega
+RUN apk add --update nodejs npm curl && npm i -g vercel && pip install datasette && datasette install -U datasette-publish-vercel datasette-vega
 ENTRYPOINT ["datasette"]
