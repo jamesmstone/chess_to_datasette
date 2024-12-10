@@ -71,5 +71,5 @@ publishDB() {
 
 getDB "chess.db" || true
 updateDB "chess.db"
-#commitDB "chess.db"
+commitDB "chess.db"
 publishDB "chess.db" "jamesmstone-chess"
