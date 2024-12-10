@@ -39,10 +39,11 @@ commitDB() {
   mv "$db" "$tempDB"
   rm -rf *
   mv "$tempDB" "$db"
-  tar -cvzf "$db.tar.gz" "$db"
-  split -b 99M "$db.tar.gz" "$db.tar.gz.part"
-  git add "$db.tar.gz.part*"
-  git commit "$db.tar.gz.part*" -m "push db"
+  # tar -cvzf "$db.tar.gz" "$db"
+  # split -b 99M "$db.tar.gz" "$db.tar.gz.part"
+  # git add "$db.tar.gz.part*"
+  # git commit "$db.tar.gz.part*" -m "push db"
+  git commit "$db"
   git push origin "$dbBranch" -f
 }
 
